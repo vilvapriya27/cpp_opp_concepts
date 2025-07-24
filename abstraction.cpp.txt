@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Abstract class
+class Camera {
+public:
+    // Pure virtual function
+    virtual void clickPicture() = 0;
+
+    // You can also add common functionality if needed
+    void openCamera() {
+        cout << "Opening camera...\n";
+    }
+};
+
+// Derived class
+class PhoneCamera : public Camera {
+public:
+    void clickPicture() override {
+        cout << "Picture clicked using phone camera!\n";
+    }
+};
+
+int main() {
+    PhoneCamera pc;
+    pc.openCamera();      // Output: Opening camera...
+    pc.clickPicture();    // Output: Picture clicked using phone camera!
+    
+    return 0;
+}

@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+// Class definition
+class Car {
+public:
+    string color;
+    string model;
+    int speed;
+
+    void start() {
+        cout << model << " started." << endl;
+    }
+
+    void accelerate() {
+        speed += 10;
+        cout << model << " is accelerating. Speed: " << speed << " km/h" << endl;
+    }
+
+    void brake() {
+        speed -= 10;
+        cout << model << " is slowing down. Speed: " << speed << " km/h" << endl;
+    }
+};
+
+int main() {
+    // Creating objects
+    Car car1;
+    car1.color = "Red";
+    car1.model = "Honda City";
+    car1.speed = 0;
+
+    Car car2;
+    car2.color = "Blue";
+    car2.model = "Maruti Swift";
+    car2.speed = 0;
+
+    // Using objects
+    car1.start();         // Output: Honda City started.
+    car1.accelerate();    // Output: Honda City is accelerating...
+    car1.brake();         // Output: Honda City is slowing down...
+
+    car2.start();         // Output: Maruti Swift started.
+
+    return 0;
+}
